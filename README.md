@@ -13,6 +13,37 @@ everyone.
 with one class label, and sentences marked `Positive` additionally get one of the
 20 items of the Cultural Intelligence Scale plus the factor it rolls up to.
 
+## What it looks like
+
+Both figures below are computed from the **invented** journals in
+[`data/example_journals_sections/`](data/example_journals_sections/) and the
+written reference coding that ships beside them, so everything in them is
+reproducible from a clone:
+
+```
+Rscript scripts/24_mock_pooled.R
+Rscript scripts/21_figures_pooled.R --pooled mock_results/pooled_units_example_sections.csv --tag _example
+```
+
+![Every sentence against every rater](docs/fig_surface_example.png)
+
+Every sentence of five journals against every rater, in document order, banded by
+week. Left of the dashed line the reference coding, right of it four models;
+`models` is their majority. `Positive` cells carry the cultural-intelligence
+subclassification — the reference coded the **factor** (italic prefix), the
+models the **item** (bold, numbered), so the two line up in the same alphabet.
+Red dots mark where the model majority departs from the reference. **They agree
+on 97 of the 101 sentences where both reach a verdict (96%).**
+
+![All rater pairs](docs/fig_pairs_example.png)
+
+The same run as an agreement matrix: every pair of raters, Krippendorff's alpha
+above, raw percent agreement below.
+
+The equivalent figures for the real cohort are not published — they carry
+per-sentence codings of real students. See
+[PUBLIC_SUBSET.md](PUBLIC_SUBSET.md).
+
 ## Data protection — read this first
 
 The journals are **personal data** under the Swiss FADP and, because the Utrecht

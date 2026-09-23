@@ -69,12 +69,16 @@ grab <- function(who, col) p[[col]][match(paste(u$unit_id, who),
 wide <- function(rs, col = "code") vapply(rs, function(r) grab(r, col),
                                           character(nrow(u)))
 Mh <- wide(hum_r); Mm <- wide(mod_r)
+# A majority column earns its place only when there is more than one rater to
+# take a majority OF. With a single reference coder it would just repeat that
+# column, reading as corroboration the data does not contain.
+SHOW_H <- NH > 1L; SHOW_M <- NM > 1L
 # The pooled table stores each side's majority with ties already collapsed to
 # NA, which is right for counting but wrong for drawing: a tied panel would be
 # painted the same white as a rater who gave no answer at all. Recompute the
 # DISPLAY majority from the individual columns so a split shows as "(tie)", and
 # keep the NA version for the agreement counts below.
-disp_h <- panel_modal(Mh, tie = "(tie)")
+disp_h <- if (SHOW_H) panel_modal(Mh, tie = "(tie)") else Mh[, 1]
 disp_m <- panel_modal(Mm, tie = "(tie)")
 h_pref <- apply(wide(hum_r, "cq_factor"), 2L, function(v) unname(FACTOR_PREFIX[v]))
 dim(h_pref) <- dim(Mh); dimnames(h_pref) <- dimnames(Mh)
@@ -84,9 +88,9 @@ disp_h_it[disp_h != "Positive"] <- NA_character_
 disp_m_it[disp_m != "Positive"] <- NA_character_
 
 # --- long form -----------------------------------------------------------
-COLS <- c(hum_r, "humans", mod_r, "models")
-KIND <- c(rep("human", NH), "human", rep("model", NM), "model")
-SRC  <- c(hum_r, "human panel", mod_r, "model panel")
+COLS <- c(hum_r, if (SHOW_H) "humans", mod_r, if (SHOW_M) "models")
+KIND <- c(rep("human", NH), if (SHOW_H) "human", rep("model", NM), if (SHOW_M) "model")
+SRC  <- c(hum_r, if (SHOW_H) "human panel", mod_r, if (SHOW_M) "model panel")
 long <- do.call(rbind, lapply(seq_along(COLS), function(i) {
   src <- SRC[i]
   if (identical(COLS[i], "humans"))      { code <- disp_h; it <- disp_h_it }
@@ -106,7 +110,11 @@ lv <- intersect(c(PRIMARY_LEVELS, "(tie)", "no answer"), unique(long$code))
 long$code <- factor(long$code, levels = lv)
 long$item[long$code != "Positive"] <- NA_character_
 
-hmaj <- grab("human panel", "code"); mmaj <- grab("model panel", "code")
+# With a single human rater there is no "human panel" row to read; that rater's
+# own column IS the human verdict. Reading the absent row would make every
+# comparison below rest on zero units and report NaN.
+hmaj <- if (SHOW_H) grab("human panel", "code") else Mh[, 1]
+mmaj <- if (SHOW_M) grab("model panel", "code") else Mm[, 1]
 comparable <- sum(!is.na(hmaj) & !is.na(mmaj))
 disagree <- u[!is.na(hmaj) & !is.na(mmaj) & hmaj != mmaj, ]
 agree_n <- comparable - nrow(disagree)
@@ -114,9 +122,9 @@ n_tie <- nrow(u) - comparable
 
 wk_lab <- data.frame(week = weeks, lab_at = band_start + band_h / 2 + 0.5)
 wk <- data.frame(at = utils::head(cumsum(band_h), -1) + 0.5)
-gap <- NH + 1.5
+gap <- NH + as.integer(SHOW_H) + 0.5
 
-kh <- krippendorff_alpha(Mh, PRIMARY_LEVELS)$alpha
+kh <- if (NH > 1L) krippendorff_alpha(Mh, PRIMARY_LEVELS)$alpha else NA_real_
 kl <- krippendorff_alpha(Mm, PRIMARY_LEVELS)$alpha
 
 # ===========================================================================
@@ -141,15 +149,19 @@ pA <- ggplot(long, aes(column, ord, fill = code)) +
   coord_cartesian(xlim = c(-0.9, length(COLS) + 0.5), clip = "off") +
   facet_wrap(~ panel_lab, nrow = 1) +
   labs(
-    title = sprintf("%d human raters and %d local models on the same %d sentences, across %d student%s",
-                    NH, NM, nrow(u), length(studs),
-                    if (length(studs) == 1L) "" else "s"),
+    title = sprintf("%d human rater%s and %d local model%s on the same %d sentences, across %d student%s",
+                    NH, if (NH == 1L) "" else "s", NM, if (NM == 1L) "" else "s",
+                    nrow(u), length(studs), if (length(studs) == 1L) "" else "s"),
     subtitle = sprintf(paste0(
-      "Left of the dashed line the people, right of it the machines; `humans` and `models` are each block's majority vote.\n",
-      "Krippendorff's alpha %.3f within the human panel, %.3f within the model panel. ",
-      "The two majorities agree on %d of the %d sentences\nwhere both reached one (%.0f%%); ",
+      sprintf("Left of the dashed line the %s, right of it the machines%s.\n",
+              if (NH == 1L) "reference coding" else "people",
+              if (SHOW_M) "; `models` is the model block's majority vote" else ""),
+      "%s Krippendorff's alpha %.3f within the model panel. ",
+      "The two sides agree on %d of the %d sentences\nwhere both reached a verdict (%.0f%%); ",
       "red dots mark the %d where they do not.%s"),
-      kh, kl, agree_n, comparable, 100 * agree_n / comparable, nrow(disagree),
+      if (NH > 1L) sprintf("Alpha %.3f within the human panel,", kh) else
+        sprintf("`%s` is one written coding, so it has no internal alpha;", hum_r[1]),
+      kl, agree_n, comparable, 100 * agree_n / comparable, nrow(disagree),
       if (n_tie > 0L) sprintf(" On %d further sentences a panel split with no majority.", n_tie) else ""),
     caption = paste0(
       "Positive cells carry the cultural-intelligence subclassification. The people coded the FACTOR only, shown as its prefix in italics (MC, COG, MOT, BEH);\n",

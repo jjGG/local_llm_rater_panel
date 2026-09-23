@@ -56,12 +56,18 @@ ok <- tryCatch({ preflight(cfg); TRUE }, error = function(e) {
 
 cat("\n== git ==\n")
 if (dir.exists(".git")) {
-  hook_src <- "tools/pre-commit"
-  hook_dst <- ".git/hooks/pre-commit"
-  if (file.exists(hook_src)) {
-    file.copy(hook_src, hook_dst, overwrite = TRUE)
-    Sys.chmod(hook_dst, "0755")
-    cat("  installed pre-commit hook (blocks journal text from being committed)\n")
+  # Hooks live in .git/hooks, which is not itself version controlled, so a fresh
+  # clone starts with none. They are reinstalled from tools/ on every setup.
+  hooks <- c(
+    "pre-commit" = "blocks journal text from being committed",
+    "pre-push"   = "refuses to push this tree anywhere at all")
+  for (h in names(hooks)) {
+    src <- file.path("tools", h); dst <- file.path(".git", "hooks", h)
+    if (file.exists(src)) {
+      file.copy(src, dst, overwrite = TRUE)
+      Sys.chmod(dst, "0755")
+      cat(sprintf("  installed %-11s (%s)\n", h, hooks[[h]]))
+    }
   }
 } else {
   cat("  not a git repository yet; run:  git init\n")

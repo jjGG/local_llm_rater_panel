@@ -60,6 +60,8 @@ copy README.md
 copy RUNBOOK.md
 copy LICENSE
 copy setting/README.md                # says what the CQS file must look like
+copy docs                             # the two README figures
+copy mock_results/pooled_units_example_sections.csv
 
 echo
 echo "--- mock_results: outputs computed from the INVENTED journals only -----"
