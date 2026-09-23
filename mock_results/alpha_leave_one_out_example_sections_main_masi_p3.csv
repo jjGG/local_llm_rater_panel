@@ -1,0 +1,4 @@
+"dropped","n_remaining","alpha_without","delta_vs_all"
+"qwen3.6:latest",2,0.788543631490122,0.0103313167115189
+"gpt-oss:20b",2,0.786329113924051,0.00811679914544727
+"DeepSeek-V4-Flash-DSpark",2,0.77863614687649,0.000423832097886878

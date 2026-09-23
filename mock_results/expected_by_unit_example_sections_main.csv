@@ -1,0 +1,19 @@
+"unit_id","expected","n_diverging","n_answered","models_said","arguable","unanimous"
+"E03_w04_q02_s02","Negative",3,4,"Not marked",FALSE,FALSE
+"E03_w10_q01_s02","Self awareness",3,4,"Not marked",FALSE,FALSE
+"E04_w07_q01_s02","Positive",3,4,"Negative / Not marked",FALSE,FALSE
+"E01_w07_q02_s02","Negative",2,4,"Not marked",FALSE,FALSE
+"E02_w04_q01_s02","Not marked",2,4,"Negative",FALSE,FALSE
+"E02_w07_q01_s01","Positive",2,4,"Not marked",TRUE,FALSE
+"E03_w01_q02_s02","Not marked",2,4,"Self awareness",FALSE,FALSE
+"E03_w07_q02_s01","Positive",2,3,"Not marked",FALSE,FALSE
+"E03_w10_q01_s03","Positive",2,4,"Not marked",FALSE,FALSE
+"E04_w04_q01_s02","Negative",2,4,"Not marked",FALSE,FALSE
+"E01_w04_q01_s02","Positive",1,4,"Not marked",FALSE,FALSE
+"E01_w10_q01_s02","Positive",1,4,"Not marked",FALSE,FALSE
+"E01_w10_q01_s03","Not marked",1,4,"Positive",FALSE,FALSE
+"E02_w07_q01_s02","Positive",1,4,"Self awareness",FALSE,FALSE
+"E04_w01_q02_s02","Not marked",1,4,"Self awareness",FALSE,FALSE
+"E04_w10_q02_s02","Not marked",1,4,"Positive",FALSE,FALSE
+"E05_w01_q02_s02","Not marked",1,4,"Self awareness",FALSE,FALSE
+"E05_w10_q01_s02","Self awareness",1,4,"Not marked",FALSE,FALSE

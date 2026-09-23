@@ -1,0 +1,253 @@
+"unit_id","student_id","week","provider","model","tier","replicate","profile","rater_id","codes","n_codes","cq_type","conf_primary","conf_cq","mode_primary","repaired","secs","cached","ok","error","is_positive","is_negative","is_self_awareness","is_no_comment"
+"P01_w01_u01","P01",1,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Negative | Self awareness",2,"Motivational","0.95","0.95","prompt",,2.85,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P01_w01_u02","P01",1,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"1",,"prompt",,1.19,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w01_u03","P01",1,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"0.95",,"prompt",,0.74,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w04_u01","P01",4,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive",1,,"0.95",,"prompt",,1.61,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w04_u02","P01",4,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive",1,,"0.9",,"prompt",,1.21,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w07_u01","P01",7,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive",1,,"0.95",,"prompt",,1.56,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w07_u02","P01",7,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"1",,"prompt",,0.89,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w10_u01","P01",10,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive",1,,"0.9",,"prompt",,1.52,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w10_u02","P01",10,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive | Self awareness",2,"Metacognitive","0.9","0.9","prompt",,4.92,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P02_w01_u01","P02",1,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive | Self awareness",2,"Metacognitive","0.95","0.9","prompt",,2.93,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P02_w01_u02","P02",1,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"1",,"prompt",,0.76,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w04_u01","P02",4,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Negative",1,,"0.95",,"prompt",,0.84,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w04_u02","P02",4,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Negative",1,,"0.95",,"prompt",,0.87,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w07_u01","P02",7,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Negative",1,,"1",,"prompt",,1.39,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w07_u02","P02",7,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"1",,"prompt",,1.42,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w10_u01","P02",10,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"1",,"prompt",,0.8,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w10_u02","P02",10,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"0.9",,"prompt",,6.35,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P03_w01_u01","P03",1,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive | Self awareness",2,"Metacognitive","0.95","0.9","prompt",,4.39,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P03_w01_u02","P03",1,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"0.95",,"prompt",,1.21,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P03_w04_u01","P03",4,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive",1,,"0.95",,"prompt",,1.38,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w04_u02","P03",4,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Self awareness",1,"Behavioural","0.95","0.95","prompt",,2.5,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P03_w07_u01","P03",7,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive",1,,"0.9",,"prompt",,1.47,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w07_u02","P03",7,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"1",,"prompt",,0.75,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P03_w10_u01","P03",10,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive",1,,"1",,"prompt",,0.75,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w10_u02","P03",10,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive | Self awareness",2,"Metacognitive","0.9","0.9","prompt",,4.26,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P04_w01_u01","P04",1,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"0.9",,"prompt",,3.73,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w01_u02","P04",1,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Negative | Self awareness",2,"Metacognitive","0.9","0.95","prompt",,2.9,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P04_w04_u01","P04",4,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive | Negative",2,,"0.9",,"prompt",,3.47,TRUE,TRUE,"",TRUE,TRUE,FALSE,FALSE
+"P04_w04_u02","P04",4,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"1",,"prompt",,0.63,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w07_u01","P04",7,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive",1,,"0.9",,"prompt",,1.3,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P04_w07_u02","P04",7,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Negative",1,,"0.9",,"prompt",,2.71,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P04_w10_u01","P04",10,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"1",,"prompt",,0.81,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w10_u02","P04",10,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Self awareness",1,"Metacognitive","0.9","0.9","prompt",,4.61,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P05_w01_u01","P05",1,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive | Self awareness",2,"Metacognitive","0.95","0.9","prompt",,4.59,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P05_w01_u02","P05",1,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"0.95",,"prompt",,2.02,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P05_w04_u01","P05",4,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive",1,,"0.9",,"prompt",,2.73,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P05_w04_u02","P05",4,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Negative",1,,"1",,"prompt",,0.92,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P05_w07_u01","P05",7,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Positive",1,,"0.95",,"prompt",,1.24,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P05_w07_u02","P05",7,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Self awareness",1,"Behavioural","0.9","0.9","prompt",,4.12,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P05_w10_u01","P05",10,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Negative",1,,"1",,"prompt",,1.25,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P05_w10_u02","P05",10,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","No comment",1,,"0.9",,"prompt",,3.17,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P05_w10_u03","P05",10,"fgcz_vllm","DeepSeek-V4-Flash-DSpark","fgcz",1,"main","llm:DeepSeek-V4-Flash-DSpark","Self awareness",1,"Metacognitive","0.95","0.95","prompt",,3.64,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P01_w01_u01","P01",1,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Negative | Self awareness",2,"Motivational","NA","NA","schema",,26.59,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P01_w01_u02","P01",1,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,5.3,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w01_u03","P01",1,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,5.03,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w04_u01","P01",4,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive",1,,"NA",,"schema",,7.27,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w04_u02","P01",4,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive",1,,"NA",,"schema",,9.88,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w07_u01","P01",7,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive",1,,"NA",,"schema",,8.24,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w07_u02","P01",7,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,4.96,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w10_u01","P01",10,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,8.22,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w10_u02","P01",10,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive | Self awareness",2,"Metacognitive","NA","NA","schema",,23.4,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P02_w01_u01","P02",1,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive | Self awareness",2,"Motivational","NA","NA","schema",,25.65,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P02_w01_u02","P02",1,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,5.69,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w04_u01","P02",4,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Negative",1,,"NA",,"schema",,7.65,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w04_u02","P02",4,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Negative",1,,"NA",,"schema",,7.85,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w07_u01","P02",7,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Negative",1,,"NA",,"schema",,7.52,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w07_u02","P02",7,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,7.3,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w10_u01","P02",10,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,5.65,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w10_u02","P02",10,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Self awareness",1,"Metacognitive","NA","NA","schema",,22.84,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P03_w01_u01","P03",1,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive | Self awareness",2,"Metacognitive","NA","NA","schema",,29.19,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P03_w01_u02","P03",1,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,6.9,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P03_w04_u01","P03",4,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive",1,,"NA",,"schema",,8.77,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w04_u02","P03",4,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Self awareness",1,"Behavioural","NA","NA","schema",,23.53,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P03_w07_u01","P03",7,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive",1,,"NA",,"schema",,10.34,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w07_u02","P03",7,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,5.97,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P03_w10_u01","P03",10,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive",1,,"NA",,"schema",,8.15,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w10_u02","P03",10,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive",1,,"NA",,"schema",,12.07,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P04_w01_u01","P04",1,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,11.34,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w01_u02","P04",1,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Negative | Self awareness",2,"Metacognitive","NA","NA","schema",,25.39,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P04_w04_u01","P04",4,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive | Negative",2,,"NA",,"schema",,12.89,TRUE,TRUE,"",TRUE,TRUE,FALSE,FALSE
+"P04_w04_u02","P04",4,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,6.08,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w07_u01","P04",7,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive",1,,"NA",,"schema",,11.64,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P04_w07_u02","P04",7,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,10.04,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w10_u01","P04",10,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,6.77,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w10_u02","P04",10,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive",1,,"NA",,"schema",,12.08,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P05_w01_u01","P05",1,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive | Self awareness",2,"Metacognitive","NA","NA","schema",,25.22,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P05_w01_u02","P05",1,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,7.83,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P05_w04_u01","P05",4,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive",1,,"NA",,"schema",,9.93,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P05_w04_u02","P05",4,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Negative",1,,"NA",,"schema",,8.34,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P05_w07_u01","P05",7,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive",1,,"NA",,"schema",,7.52,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P05_w07_u02","P05",7,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","No comment",1,,"NA",,"schema",,8.58,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P05_w10_u01","P05",10,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Negative | Self awareness",2,"Metacognitive","NA","NA","schema",,22.06,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P05_w10_u02","P05",10,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive",1,,"NA",,"schema",,9.03,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P05_w10_u03","P05",10,"local_ollama","gemma4:e4b","mid",1,"main","llm:gemma4:e4b","Positive | Self awareness",2,"Metacognitive","NA","NA","schema",,24.04,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P01_w01_u01","P01",1,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Negative | Self awareness",2,"Motivational","0.99","0.95","schema",,18.76,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P01_w01_u02","P01",1,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","No comment",1,,"1",,"schema",,4.02,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w01_u03","P01",1,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","No comment",1,,"0.99",,"schema",,3.65,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w04_u01","P01",4,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive",1,,"0.99",,"schema",,4.31,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w04_u02","P01",4,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive",1,,"1",,"schema",,8.24,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w07_u01","P01",7,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive",1,,"1",,"schema",,6.55,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w07_u02","P01",7,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","No comment",1,,"0.99",,"schema",,3.08,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w10_u01","P01",10,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive",1,,"0.95",,"schema",,6.96,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w10_u02","P01",10,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive | Self awareness",2,"Behavioural","0.99","0.92","schema",,13.19,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P02_w01_u01","P02",1,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive | Self awareness",2,"Motivational","0.99","0.9","schema",,18.06,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P02_w01_u02","P02",1,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","No comment",1,,"1",,"schema",,5.39,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w04_u01","P02",4,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Negative",1,,"0.95",,"schema",,4.08,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w04_u02","P02",4,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Negative",1,,"0.99",,"schema",,4.34,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w07_u01","P02",7,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Negative",1,,"0.99",,"schema",,4.59,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w07_u02","P02",7,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","No comment",1,,"1",,"schema",,3.74,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w10_u01","P02",10,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","No comment",1,,"0.99",,"schema",,3.66,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w10_u02","P02",10,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Negative | Self awareness",2,"Metacognitive","0.95","1","schema",,18.96,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P03_w01_u01","P03",1,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive | Self awareness",2,"Cognitive","0.99","0.97","schema",,13.36,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P03_w01_u02","P03",1,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","No comment",1,,"0.99",,"schema",,3.73,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P03_w04_u01","P03",4,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive",1,,"0.99",,"schema",,4.09,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w04_u02","P03",4,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Self awareness",1,"Behavioural","0.99","0.99","schema",,12.32,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P03_w07_u01","P03",7,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive",1,,"0.99",,"schema",,5.55,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w07_u02","P03",7,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","No comment",1,,"0.99",,"schema",,2.98,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P03_w10_u01","P03",10,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive",1,,"1",,"schema",,3.61,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w10_u02","P03",10,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive | Self awareness",2,"Metacognitive","0.9","0.95","schema",,12.1,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P04_w01_u01","P04",1,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Negative",1,,"0.95",,"schema",,5.87,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P04_w01_u02","P04",1,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Negative | Self awareness",2,"Metacognitive","0.99","0.9","schema",,16.58,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P04_w04_u01","P04",4,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive | Negative",2,,"0.95",,"schema",,9.02,TRUE,TRUE,"",TRUE,TRUE,FALSE,FALSE
+"P04_w04_u02","P04",4,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","No comment",1,,"0.99",,"schema",,3.01,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w07_u01","P04",7,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive",1,,"0.95",,"schema",,10.62,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P04_w07_u02","P04",7,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Negative",1,,"0.99",,"schema",,7.17,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P04_w10_u01","P04",10,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","No comment",1,,"1",,"schema",,4.52,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w10_u02","P04",10,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Self awareness",1,"Metacognitive","0.99","1","schema",,12.18,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P05_w01_u01","P05",1,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive | Self awareness",2,"Metacognitive","0.99","0.99","schema",,13.8,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P05_w01_u02","P05",1,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","No comment",1,,"1",,"schema",,6.55,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P05_w04_u01","P05",4,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Self awareness",1,"Metacognitive","0.99","0.99","schema",,18.4,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P05_w04_u02","P05",4,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Negative",1,,"1",,"schema",,3.82,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P05_w07_u01","P05",7,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive",1,,"0.99",,"schema",,4.32,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P05_w07_u02","P05",7,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","No comment",1,,"0.99",,"schema",,7.31,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P05_w10_u01","P05",10,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Negative",1,,"0.99",,"schema",,4.67,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P05_w10_u02","P05",10,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Positive",1,,"0.99",,"schema",,6,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P05_w10_u03","P05",10,"local_ollama","gpt-oss:20b","large",1,"main","llm:gpt-oss:20b","Self awareness",1,"Metacognitive","0.99","1","schema",,13.36,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P01_w01_u01","P01",1,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Negative | Self awareness",2,"Metacognitive","0.9","0.8","schema",,8.72,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P01_w01_u02","P01",1,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","No comment",1,,"1",,"schema",,1.68,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w01_u03","P01",1,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Negative",1,,"1",,"schema",,1.67,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P01_w04_u01","P01",4,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive",1,,"0.9",,"schema",,1.42,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w04_u02","P01",4,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive",1,,"1",,"schema",,1.78,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w07_u01","P01",7,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive | Negative",2,,"0.9",,"schema",,2.68,TRUE,TRUE,"",TRUE,TRUE,FALSE,FALSE
+"P01_w07_u02","P01",7,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","No comment",1,,"1",,"schema",,1.56,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w10_u01","P01",10,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive",1,,"0.9",,"schema",,1.41,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w10_u02","P01",10,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive | Self awareness",2,"Metacognitive","0.9","0.8","schema",,3.38,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P02_w01_u01","P02",1,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive | Self awareness",2,"Metacognitive","0.9","0.8","schema",,3.55,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P02_w01_u02","P02",1,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","No comment",1,,"1",,"schema",,1.89,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w04_u01","P02",4,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Negative",1,,"0.9",,"schema",,2.03,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w04_u02","P02",4,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Negative",1,,"1",,"schema",,1.4,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w07_u01","P02",7,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Negative",1,,"0.9",,"schema",,1.72,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w07_u02","P02",7,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","No comment",1,,"1",,"schema",,1.81,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w10_u01","P02",10,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","No comment",1,,"1",,"schema",,1.48,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w10_u02","P02",10,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Self awareness",1,"Metacognitive","1","0.9","schema",,3.83,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P03_w01_u01","P03",1,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Self awareness",1,"Metacognitive","1","0.8","schema",,3.5,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P03_w01_u02","P03",1,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","No comment",1,,"1",,"schema",,1.58,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P03_w04_u01","P03",4,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive",1,,"0.9",,"schema",,1.19,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w04_u02","P03",4,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Self awareness",1,"Metacognitive","1","0.8","schema",,3.46,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P03_w07_u01","P03",7,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive",1,,"1",,"schema",,1.49,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w07_u02","P03",7,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","No comment",1,,"1",,"schema",,1.45,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P03_w10_u01","P03",10,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive",1,,"1",,"schema",,1.15,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w10_u02","P03",10,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive | Self awareness",2,"Metacognitive","0.98","0.8","schema",,3.16,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P04_w01_u01","P04",1,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","No comment",1,,"1",,"schema",,1.57,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w01_u02","P04",1,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Negative | Self awareness",2,"Metacognitive","0.9","1","schema",,3.66,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P04_w04_u01","P04",4,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Negative | Self awareness",2,"Metacognitive","0.9","0.8","schema",,3.74,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P04_w04_u02","P04",4,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive",1,,"1",,"schema",,1.81,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P04_w07_u01","P04",7,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive | Self awareness",2,"Metacognitive","0.9","0.8","schema",,3.34,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P04_w07_u02","P04",7,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","No comment",1,,"1",,"schema",,1.69,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w10_u01","P04",10,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","No comment",1,,"1",,"schema",,2.31,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w10_u02","P04",10,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Self awareness",1,"Metacognitive","1","0.8","schema",,3.69,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P05_w01_u01","P05",1,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive | Self awareness",2,"Metacognitive","0.9","0.9","schema",,4.54,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P05_w01_u02","P05",1,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Negative | Self awareness",2,"Metacognitive","0.9","0.8","schema",,3.7,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P05_w04_u01","P05",4,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive",1,,"0.9",,"schema",,2.33,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P05_w04_u02","P05",4,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Negative",1,,"0.9",,"schema",,1.64,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P05_w07_u01","P05",7,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive",1,,"0.9",,"schema",,1.61,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P05_w07_u02","P05",7,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Self awareness",1,"Metacognitive","1","0.9","schema",,3.37,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P05_w10_u01","P05",10,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Negative | Self awareness",2,"Metacognitive","0.9","0.8","schema",,3.78,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P05_w10_u02","P05",10,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Positive",1,,"0.9",,"schema",,1.98,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P05_w10_u03","P05",10,"local_ollama","llama3.1:latest","mid",1,"main","llm:llama3.1:latest","Self awareness",1,"Metacognitive","1","0.9","schema",,3.75,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P01_w01_u01","P01",1,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Negative | Self awareness",2,"Motivational","0.95","0.95","schema",,61.91,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P01_w01_u02","P01",1,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","No comment",1,,"1",,"schema",,19.23,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w01_u03","P01",1,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","No comment",1,,"1",,"schema",,13.76,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w04_u01","P01",4,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Positive",1,,"1",,"schema",,71.04,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w04_u02","P01",4,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Positive",1,,"0.95",,"schema",,180.77,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w07_u01","P01",7,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Positive | Negative",2,,"1",,"schema",,40.94,FALSE,TRUE,"",TRUE,TRUE,FALSE,FALSE
+"P01_w07_u02","P01",7,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","No comment",1,,"0.95",,"schema",,10.98,FALSE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w10_u01","P01",10,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","No comment",1,,"0.95",,"schema",,35.08,FALSE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w10_u02","P01",10,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Self awareness",1,"Metacognitive","0.95","0.95","schema",,107.79,FALSE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P02_w01_u01","P02",1,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Positive | Self awareness",2,"Cognitive","1","0.95","schema",,82.02,FALSE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P02_w01_u02","P02",1,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","No comment",1,,"1",,"schema",,20.02,FALSE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w04_u01","P02",4,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Negative",1,,"0.95",,"schema",,22.36,FALSE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w04_u02","P02",4,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Negative",1,,"1",,"schema",,31.36,FALSE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w07_u01","P02",7,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Negative",1,,"1",,"schema",,20.68,FALSE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w07_u02","P02",7,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","No comment",1,,"1",,"schema",,21.69,FALSE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w10_u01","P02",10,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","No comment",1,,"1",,"schema",,23.91,FALSE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w10_u02","P02",10,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Self awareness",1,"Metacognitive","0.95","0.95","schema",,64.27,FALSE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P03_w01_u01","P03",1,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Positive | Self awareness",2,"Motivational","0.95","0.95","schema",,89.29,FALSE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P03_w01_u02","P03",1,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","No comment",1,,"1",,"schema",,11.4,FALSE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P03_w04_u01","P03",4,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Positive",1,,"1",,"schema",,18.12,FALSE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w04_u02","P03",4,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Self awareness",1,"Behavioural","0.95","0.95","schema",,61.72,FALSE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P03_w07_u01","P03",7,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Positive",1,,"1",,"schema",,26.77,FALSE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w07_u02","P03",7,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","No comment",1,,"1",,"schema",,19.87,FALSE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P03_w10_u01","P03",10,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Positive",1,,"0.95",,"schema",,22.15,FALSE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w10_u02","P03",10,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Positive | Self awareness",2,"Motivational","0.95","0.95","schema",,79.74,FALSE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P04_w01_u01","P04",1,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Negative",1,,"0.95",,"schema",,51.54,FALSE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P04_w01_u02","P04",1,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Negative | Self awareness",2,"Metacognitive","1","0.95","schema",,77.37,FALSE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P04_w04_u01","P04",4,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Negative",1,,"0.95",,"schema",,50.6,FALSE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P04_w04_u02","P04",4,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","No comment",1,,"1",,"schema",,12.91,FALSE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w07_u01","P04",7,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Positive",1,,"0.95",,"schema",,37.75,FALSE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P04_w07_u02","P04",7,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Negative",1,,"0.95",,"schema",,42.3,FALSE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P04_w10_u01","P04",10,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","No comment",1,,"1",,"schema",,11.7,FALSE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w10_u02","P04",10,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Self awareness",1,"Metacognitive","0.95","0.95","schema",,59.81,FALSE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P05_w01_u01","P05",1,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Positive | Self awareness",2,"Metacognitive","1","0.95","schema",,78.18,FALSE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P05_w01_u02","P05",1,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","No comment",1,,"0.95",,"schema",,45.69,FALSE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P05_w04_u01","P05",4,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Self awareness",1,"Metacognitive","0.95","0.95","schema",,72.16,FALSE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P05_w04_u02","P05",4,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Negative",1,,"0.95",,"schema",,35.5,FALSE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P05_w07_u01","P05",7,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Positive",1,,"1",,"schema",,25.61,FALSE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P05_w07_u02","P05",7,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Self awareness",1,"Behavioural","0.95","0.95","schema",,79.48,FALSE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P05_w10_u01","P05",10,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Negative",1,,"1",,"schema",,22.66,FALSE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P05_w10_u02","P05",10,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","No comment",1,,"1",,"schema",,23.5,FALSE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P05_w10_u03","P05",10,"local_ollama","qwen3.6:latest","large",1,"main","llm:qwen3.6:latest","Self awareness",1,"Metacognitive","0.95","1","schema",,74.35,FALSE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P01_w01_u01","P01",1,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Negative | Self awareness",2,"Motivational","0.95","0.9","schema",,51.06,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P01_w01_u02","P01",1,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"1",,"schema",,15.62,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w01_u03","P01",1,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"1",,"schema",,14.3,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w04_u01","P01",4,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Positive",1,,"1",,"schema",,10.89,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w04_u02","P01",4,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Positive",1,,"0.9",,"schema",,35.28,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w07_u01","P01",7,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Positive",1,,"0.95",,"schema",,15.79,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P01_w07_u02","P01",7,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"1",,"schema",,12.84,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w10_u01","P01",10,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"0.8",,"schema",,17.96,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P01_w10_u02","P01",10,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Positive | Self awareness",2,"Metacognitive","0.95","0.9","schema",,33.64,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P02_w01_u01","P02",1,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Positive | Self awareness",2,"Motivational","0.95","0.85","schema",,25.64,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P02_w01_u02","P02",1,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"1",,"schema",,18.97,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w04_u01","P02",4,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Negative",1,,"0.95",,"schema",,13.11,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w04_u02","P02",4,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Negative",1,,"0.95",,"schema",,17.87,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w07_u01","P02",7,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Negative",1,,"1",,"schema",,13.45,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P02_w07_u02","P02",7,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"1",,"schema",,16.01,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w10_u01","P02",10,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"1",,"schema",,14.44,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P02_w10_u02","P02",10,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Self awareness",1,"Metacognitive","0.95","0.9","schema",,37.73,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P03_w01_u01","P03",1,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Positive | Self awareness",2,"Metacognitive","0.95","0.9","schema",,29.76,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P03_w01_u02","P03",1,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"1",,"schema",,12.98,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P03_w04_u01","P03",4,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Positive",1,,"0.95",,"schema",,15.55,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w04_u02","P03",4,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Self awareness",1,"Behavioural","0.9","0.9","schema",,39.98,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P03_w07_u01","P03",7,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Positive",1,,"0.95",,"schema",,11.75,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w07_u02","P03",7,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"1",,"schema",,12.92,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P03_w10_u01","P03",10,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Positive",1,,"0.95",,"schema",,8.25,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P03_w10_u02","P03",10,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Self awareness",1,"Metacognitive","1","0.9","schema",,62.17,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P04_w01_u01","P04",1,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"1",,"schema",,14.41,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w01_u02","P04",1,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Negative | Self awareness",2,"Metacognitive","0.95","0.9","schema",,29.18,TRUE,TRUE,"",FALSE,TRUE,TRUE,FALSE
+"P04_w04_u01","P04",4,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Negative",1,,"0.9",,"schema",,19.58,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P04_w04_u02","P04",4,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"1",,"schema",,19.66,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w07_u01","P04",7,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Positive",1,,"0.9",,"schema",,16.91,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P04_w07_u02","P04",7,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Negative",1,,"0.9",,"schema",,43.6,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P04_w10_u01","P04",10,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"1",,"schema",,15.04,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P04_w10_u02","P04",10,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Self awareness",1,"Metacognitive","0.9","0.95","schema",,36.58,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P05_w01_u01","P05",1,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Positive | Self awareness",2,"Metacognitive","0.95","0.9","schema",,33.35,TRUE,TRUE,"",TRUE,FALSE,TRUE,FALSE
+"P05_w01_u02","P05",1,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"1",,"schema",,19.18,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P05_w04_u01","P05",4,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Self awareness",1,"Metacognitive","0.95","0.95","schema",,34.23,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE
+"P05_w04_u02","P05",4,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Negative",1,,"1",,"schema",,13.15,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P05_w07_u01","P05",7,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Positive",1,,"1",,"schema",,14.47,TRUE,TRUE,"",TRUE,FALSE,FALSE,FALSE
+"P05_w07_u02","P05",7,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"0.8",,"schema",,24.29,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P05_w10_u01","P05",10,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Negative",1,,"0.9",,"schema",,14.08,TRUE,TRUE,"",FALSE,TRUE,FALSE,FALSE
+"P05_w10_u02","P05",10,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","No comment",1,,"0.8",,"schema",,13.97,TRUE,TRUE,"",FALSE,FALSE,FALSE,TRUE
+"P05_w10_u03","P05",10,"local_ollama","qwen3:14b","mid",1,"main","llm:qwen3:14b","Self awareness",1,"Metacognitive","0.95","0.95","schema",,33.74,TRUE,TRUE,"",FALSE,FALSE,TRUE,FALSE

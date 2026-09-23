@@ -1,0 +1,44 @@
+# ===========================================================================
+# This repository is the PUBLIC SUBSET of the project (see PUBLIC_SUBSET.md).
+# It is assembled by an allowlist, so the rules here are a second line of
+# defence rather than the mechanism. Journal text, model caches and real-cohort
+# results never enter it.
+# ===========================================================================
+
+# Anything that could carry a student passage
+*.docx
+*.doc
+*.odt
+*.rtf
+journals/
+journal/
+test_journal/
+originals*/
+cache/
+
+# Outputs of real runs. mock_results/ (invented journals) IS tracked; results/
+# is what a real run writes locally and must stay local.
+results/
+reports/
+
+# The scratchpad for scripts/09_ask.R -- the obvious thing to paste into it is a
+# real student sentence.
+ask.txt
+ask_*.txt
+
+# Third-party copyright: the Cultural Intelligence Scale item wording and the
+# Ang & Van Dyne paper. config/codebook.yml holds only item CODES and factors;
+# the wording is read from this file at load time. Supply your own copy.
+setting/*.pdf
+setting/ClassificationScheme.txt
+
+# Local units files built from real journals
+data/units_real*.csv
+data/units_[0-9]*.csv
+
+# R / macOS noise
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+.DS_Store

@@ -1,0 +1,23 @@
+"unit_id","model","expected","got","expected_item","got_item","arguable"
+"E01_w10_q01_s02","DeepSeek-V4-Flash-DSpark","Positive","Not marked","MOT2",,FALSE
+"E03_w04_q02_s02","DeepSeek-V4-Flash-DSpark","Negative","Not marked",,,FALSE
+"E03_w07_q02_s01","DeepSeek-V4-Flash-DSpark","Positive","Not marked","MC4",,FALSE
+"E03_w10_q01_s02","DeepSeek-V4-Flash-DSpark","Self awareness","Not marked",,,FALSE
+"E03_w10_q01_s03","DeepSeek-V4-Flash-DSpark","Positive","Not marked","MOT1",,FALSE
+"E04_w04_q01_s02","DeepSeek-V4-Flash-DSpark","Negative","Not marked",,,FALSE
+"E04_w07_q01_s02","DeepSeek-V4-Flash-DSpark","Positive","Negative","MC4",,FALSE
+"E01_w10_q01_s03","gpt-oss:20b","Not marked","Positive",,"MOT1",FALSE
+"E02_w04_q01_s02","gpt-oss:20b","Not marked","Negative",,,FALSE
+"E02_w07_q01_s01","gpt-oss:20b","Positive","Not marked","BEH3",,TRUE
+"E03_w10_q01_s02","gpt-oss:20b","Self awareness","Not marked",,,FALSE
+"E04_w07_q01_s02","gpt-oss:20b","Positive","Negative","MC4",,FALSE
+"E04_w10_q02_s02","gpt-oss:20b","Not marked","Positive",,"COG2",FALSE
+"E05_w10_q01_s02","gpt-oss:20b","Self awareness","Not marked",,,FALSE
+"E01_w04_q01_s02","qwen3.6:latest","Positive","Not marked","COG3",,FALSE
+"E01_w07_q02_s02","qwen3.6:latest","Negative","Not marked",,,FALSE
+"E02_w04_q01_s02","qwen3.6:latest","Not marked","Negative",,,FALSE
+"E03_w01_q02_s02","qwen3.6:latest","Not marked","Self awareness",,,FALSE
+"E03_w04_q02_s02","qwen3.6:latest","Negative","Not marked",,,FALSE
+"E03_w10_q01_s02","qwen3.6:latest","Self awareness","Not marked",,,FALSE
+"E04_w01_q02_s02","qwen3.6:latest","Not marked","Self awareness",,,FALSE
+"E05_w01_q02_s02","qwen3.6:latest","Not marked","Self awareness",,,FALSE

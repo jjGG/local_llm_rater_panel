@@ -1,0 +1,17 @@
+"rater","label","n","proportion","n_missing"
+"DeepSeek-V4-Flash-DSpark","Metacognitive",5,0.263157894736842,88
+"DeepSeek-V4-Flash-DSpark","Cognitive",5,0.263157894736842,88
+"DeepSeek-V4-Flash-DSpark","Motivational",5,0.263157894736842,88
+"DeepSeek-V4-Flash-DSpark","Behavioural",4,0.210526315789474,88
+"gpt-oss:20b","Metacognitive",5,0.217391304347826,84
+"gpt-oss:20b","Cognitive",7,0.304347826086957,84
+"gpt-oss:20b","Motivational",8,0.347826086956522,84
+"gpt-oss:20b","Behavioural",3,0.130434782608696,84
+"qwen3.6:latest","Metacognitive",6,0.285714285714286,86
+"qwen3.6:latest","Cognitive",4,0.19047619047619,86
+"qwen3.6:latest","Motivational",8,0.380952380952381,86
+"qwen3.6:latest","Behavioural",3,0.142857142857143,86
+"qwen3:14b","Metacognitive",2,0.117647058823529,90
+"qwen3:14b","Cognitive",5,0.294117647058824,90
+"qwen3:14b","Motivational",5,0.294117647058824,90
+"qwen3:14b","Behavioural",5,0.294117647058824,90

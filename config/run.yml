@@ -1,0 +1,246 @@
+# ---------------------------------------------------------------------------
+# Run configuration for the local-LLM rating arm.
+# Everything here lands in the run manifest, so the methods section can be
+# reconstructed from a results directory alone.
+# ---------------------------------------------------------------------------
+
+# --- Model servers --------------------------------------------------------
+# Both provider types are on-premises. No cloud provider is configurable here:
+# journal passages are confidential personal data (FADP/GDPR), so inference
+# stays on this machine or inside the FGCZ network.
+#
+# Endpoints are read from the environment because they differ per site and
+# drift over time -- the FGCZ AI-usage policy says explicitly not to hardcode
+# them. Put them in ~/.Renviron (no quotes, no export), for example:
+#
+#   FGCZ_LLM_BASE_URL=http://<host>:<port>/v1
+#   FGCZ_LLM_API_KEY=dummy
+#
+# Verify an endpoint before a long run:  curl $FGCZ_LLM_BASE_URL/models
+providers:
+  local_ollama:
+    type: ollama
+    base_url: http://localhost:11434
+    # 300 s is ~7x the slowest call ever observed (qwen3.6 at ~43 s). It was 900,
+    # and a qwen3:14b generation hung for the full 15 minutes during the
+    # consistency run before failing -- a long timeout does not rescue a hung
+    # generation, it just wastes the wall clock. Failed calls are not cached, so
+    # re-running the same command retries them.
+    # MEASURED 2026-08-20 on qwen3:14b over sentence units: median 15 s per
+    # unit, and one unit in fifteen hung until the timeout. So 300 s is twenty
+    # times the median -- generous enough that nothing real is cut off, and the
+    # main cost of a stall is the wait itself. Lower this to ~120 s if stalls
+    # become frequent; nothing legitimate has come close to it.
+    #
+    # A timeout is no longer retried (see try_mode in R/llm.R), so a stall now
+    # costs one timeout rather than parse_retries x timeout.
+    timeout_s: 300
+    max_tries: 3
+
+  # The FGCZ DeepSeek host runs TWO things. Use port 8000, the raw vLLM API --
+  # NOT port 8080, which is an Open WebUI front end that needs a personal token
+  # and may strip `response_format` before the model sees it.
+  #
+  # Verified 2026-08-19 against http://<vllm-host>:8000/openapi.json:
+  #   vLLM 0.11.2.dev, /health 200, no authentication required
+  #   serves DeepSeek-V4-Flash-DSpark, max_model_len 262144
+  #   supports response_format (native constrained decoding), seed,
+  #   reasoning_effort
+  # Re-check with:  curl http://<vllm-host>:8000/v1/models
+  fgcz_vllm:
+    type: openai              # OpenAI-compatible /v1/chat/completions
+    # base_url deliberately omitted: set FGCZ_LLM_BASE_URL in ~/.Renviron
+    #   FGCZ_LLM_BASE_URL=http://<your-vllm-host>:<port>/v1
+
+    base_url_env: FGCZ_LLM_BASE_URL   # set this to override without editing here
+    api_key_env: FGCZ_LLM_API_KEY     # optional; this endpoint needs no auth
+    timeout_s: 1800           # reasoning models on shared hardware can be slow
+    max_tries: 3
+    max_tokens: 2000
+    omit_seed: false          # seed is supported, so runs stay reproducible
+    # reasoning_effort: low   # uncomment to trade quality for speed
+    #
+    # MUST be `prompt` on this server, not `schema`. Tested 2026-08-19: this
+    # vLLM build advertises response_format but its structured-output path is
+    # broken for this model -- it emits a literal '{"' before the object, so the
+    # result is invalid JSON. Every schema variant failed identically (strict
+    # true/false, no descriptions, no additionalProperties, the
+    # `structured_outputs` param). `response_format: json_object` parses but
+    # returns the WRONG STRUCTURE (rationale becomes an object keyed by code).
+    # Asking for JSON in the prompt and validating here works reliably.
+    #
+    # CONSEQUENCE TO DISCLOSE: this model therefore sees a slightly different
+    # user message (the JSON instructions are appended) and its output is not
+    # grammar-constrained, unlike the five Ollama models. The mode used is
+    # recorded per call in `mode_primary` and in the run manifest. Re-test with
+    # scripts/05_check_provider.R after any server upgrade -- if the defect is
+    # fixed, switch this back to `schema` for a cleaner comparison.
+    structured_output: prompt
+
+# What the model is shown for each unit.
+#   unit                  the unit alone
+#   unit_context          the unit + its parent paragraph   <- current default
+#   unit_question         the unit + the journal question it answers
+#   unit_question_context the unit + question + surrounding text
+#
+# Since codebook v5 the unit is a SENTENCE, and many sentences cannot be coded
+# alone -- "It was great." needs to know what "it" is. So `unit_context` is the
+# default: the sentence is shown under its own paragraph, with the paragraph
+# explicitly marked as reference material that must not itself be coded.
+# 01_prepare_units.R fills the `context` column with the parent paragraph when
+# it splits a journal, so no extra preparation is needed.
+#
+# The humans read the whole journal, so even `unit_context` is a harder task
+# than theirs. Switching modes needs the matching column in the units file, and
+# changes every cache key -- so it is a decision to make before a long run, not
+# during one.
+context_mode: unit_context
+
+# Sampling profiles. `main` is the headline rating; `consistency` measures
+# whether a model agrees with itself and is off until you decide to run it.
+profiles:
+  main:
+    temperature: 0.0
+    n_replicates: 1
+    rotate_labels: false   # label order fixed, so the run is reproducible
+  consistency:
+    temperature: 0.7
+    n_replicates: 5
+    rotate_labels: true    # rotate label order per replicate to expose order bias
+
+  # Is the deterministic setting actually deterministic? At temperature 0 the
+  # seed is inert (greedy decoding ignores it) -- the differing seeds only force
+  # distinct cache keys so the calls really reach the server. So this measures
+  # SERVER reproducibility, not sampling stability. Worth knowing: the FGCZ vLLM
+  # returned 297 and 226 characters on two identical temperature-0 calls, so it
+  # is not perfectly reproducible.
+  # Replicate 1 is a cache hit against the `main` run (same temperature, same
+  # seed, no rotation), so this costs ~70 min for 45 units over six models.
+  # If alpha comes out at 1.000 for a model, that model is deterministic locally
+  # and no further replicates are needed.
+  determinism:
+    temperature: 0.0
+    n_replicates: 2
+    rotate_labels: false
+
+  # Pure label-order bias. Temperature 0 removes sampling noise entirely, so ANY
+  # variation between replicates is attributable to where a label sat in the
+  # prompt -- a bias reviewers do ask about, isolated cleanly. Replicate 1 is
+  # again a cache hit; budget ~4.6 h for the other four over six models.
+  order_bias:
+    temperature: 0.0
+    n_replicates: 5
+    rotate_labels: true
+
+base_seed: 20260818
+
+# Shared sampling options. num_ctx applies to Ollama only; the OpenAI-compatible
+# path uses the server's configured context length and `max_tokens` above.
+options:
+  num_ctx: 8192
+  top_p: 0.9
+
+# MEMORY. The local models are roughly 9 GB (qwen3:14b), 13 GB (gpt-oss:20b) and
+# 22 GB (qwen3.6) resident. They do NOT all fit in 36 GB at once, and Ollama keeps
+# a model warm for five minutes after its last request -- so a naive multi-model
+# run reaches the largest model with the others still resident, fails to load it,
+# and Ollama answers HTTP 200 with an EMPTY BODY rather than an error. That cost
+# an entire model's 107 answers once, logged only as "unparseable".
+#
+# R/rate.R now unloads each Ollama model (keep_alive 0) before moving to the
+# next, so the panel no longer depends on the machine's RAM. If you add a model,
+# check `ollama ps` mid-run once to confirm only one is resident at a time.
+
+# --- The rater panel ------------------------------------------------------
+# One entry per model = one LLM "rater". Listed fastest-first so a run gives
+# early signal before the slow models finish.
+#
+# Size tiers are deliberate, so the paper can address whether size matters
+# rather than only which model happens to win:
+#   mid   (5-10 GB): llama3.1:latest, gemma4:e4b, qwen3:14b
+#   large (13-23 GB): gpt-oss:20b, qwen3.6:latest
+# qwen3:14b and qwen3.6 also give a same-family generation comparison.
+#
+# NOTE: gemma4:latest and gemma4:e4b are the same image (ID c6eb396dbd59) --
+# do not enable both, or one model enters the analysis as two raters.
+# `think`: leave empty to let the model decide. gpt-oss, gemma4 and qwen3.6
+# emit a reasoning field unprompted; passing `think` to a model that does not
+# support it makes Ollama return an error.
+# THE PANEL IS THREE MODELS, decided 2026-08-21: qwen3.6, gpt-oss:20b and the
+# FGCZ-hosted DeepSeek. Every one of them runs on hardware we control -- the
+# local Ollama daemon or the institute vLLM. No cloud provider is configurable
+# anywhere in this repository, because the journals are confidential personal
+# data and may not leave the premises.
+#
+# THREE, NOT FOUR, ON PURPOSE. An even panel cannot break a tie: with four
+# models, 6 of 107 units on the example set came back 2-2 with no majority, and
+# every one was a genuinely borderline sentence. An odd panel removes that
+# category of non-answer structurally, without needing a tie-break rule.
+#
+# Models dropped, with the reason attached -- "we dropped it" is a methods
+# statement that needs its justification:
+#   llama3.1    leave-one-out agreement IMPROVED by 0.046 without it, worst
+#               self-consistency of the six (0.726, and -0.056 on the CQ
+#               factor), and Metacognitive on 16 of 16 factor calls.
+#   gemma4      returned a confidence of 5.0 on a 0-1 scale on every call until
+#               the schema was given explicit bounds.
+#   qwen3:14b   dropped 2026-08-21 in favour of qwen3.6, which is the same
+#               family. On the PRIMARY code the two are indistinguishable
+#               (92% exact against the reference each, detection kappa within
+#               0.01, leave-one-out delta < 0.003 for either). The separation is
+#               entirely in stage 2, where qwen3:14b was the weakest of the four
+#               by a wide margin -- CQ factor 76% against qwen3.6's 95%, CQ item
+#               47% against 81% -- and its self-consistency was lower (0.855 vs
+#               0.927, measured under the v3 scheme).
+#               KNOWN COST: the panel is now all "large" tier, so it can no
+#               longer support a claim about whether model size matters, and the
+#               same-family qwen3-vs-qwen3.6 comparison is gone too. Both were
+#               secondary aims; if either becomes a paper claim, re-enable this
+#               and re-run every profile.
+#
+# Re-enabling any of them means re-running every profile: panel membership is
+# part of what the agreement figures measure.
+models:
+  - id: llama3.1:latest      # ~4 s/call
+    provider: local_ollama
+    think:
+    enabled: false
+    tier: mid
+  - id: gemma4:e4b           # ~14 s/call
+    provider: local_ollama
+    think:
+    enabled: false
+    tier: mid
+  - id: qwen3:14b
+    provider: local_ollama
+    think:
+    enabled: false            # superseded by qwen3.6 -- see the note above
+    tier: mid
+  - id: gpt-oss:20b          # ~30 s/call
+    provider: local_ollama
+    think:
+    enabled: true
+    tier: large
+  - id: qwen3.6:latest       # ~43 s/call
+    provider: local_ollama
+    think:
+    enabled: true
+    tier: large
+
+  # FGCZ-hosted DeepSeek on the institute vLLM (<vllm-host>:8000).
+  # Only reachable from inside the FGCZ network. Verify before a long run:
+  #   Rscript scripts/05_check_provider.R fgcz_vllm
+  - id: DeepSeek-V4-Flash-DSpark
+    provider: fgcz_vllm
+    think:
+    enabled: true
+    tier: fgcz
+
+paths:
+  codebook: config/codebook.yml
+  prompts_primary: prompts/primary.md
+  prompts_cq: prompts/cq_type.md
+  cache: cache
+  results: results
+  # Human ratings to compare against, produced by test_for_consistency
+  human_long: test_for_consistency/results/units_labels_long.csv

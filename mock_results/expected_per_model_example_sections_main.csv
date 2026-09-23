@@ -1,0 +1,5 @@
+"model","n_units","n_failed","exact","over_marked","missed","det_kappa","choice_n","choice_agree","cq_n","cq_factor_agree","cq_item_agree"
+"DeepSeek-V4-Flash-DSpark",107,0,100,0,6,0.861578266494179,27,26,19,17,13
+"gpt-oss:20b",107,0,100,3,3,0.868550368550368,30,29,21,20,16
+"qwen3.6:latest",106,1,98,4,4,0.820945945945946,28,28,21,20,17
+"qwen3:14b",106,1,97,1,7,0.810883140053524,25,24,17,13,8

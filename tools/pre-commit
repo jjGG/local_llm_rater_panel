@@ -1,0 +1,65 @@
+#!/bin/sh
+# ---------------------------------------------------------------------------
+# pre-commit hook: refuse to commit student journal text.
+#
+# Installed by scripts/00_setup.R, or by hand:
+#   cp tools/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+#
+# .gitignore already excludes these paths; this hook catches the case where
+# someone force-adds a file with `git add -f`.
+# ---------------------------------------------------------------------------
+
+staged=$(git diff --cached --name-only --diff-filter=ACM)
+[ -z "$staged" ] && exit 0
+
+blocked=""
+
+for f in $staged; do
+  case "$f" in
+    # Journals in any word-processor format
+    *.docx|*.doc|*.odt|*.rtf)      blocked="$blocked\n  $f  (word-processor document)" ;;
+    # Invented text, meant to be committed. These MUST come before the
+    # journal-folder patterns below: in a shell `case`, `*` matches across `/`
+    # (unlike .gitignore), so `*/journals/*` also matches
+    # `data/example_journals/...` and would otherwise block them.
+    data/synthetic_journals/*) ;;
+    data/example_journals/*) ;;
+    data/example_journals_sections/*) ;;
+    # Journal folders. `journals/` is the location the RUNBOOK tells you to use
+    # for real journals, so it must be covered here too.
+    journals/*|*/journals/*|journal/*|test_journal/*|*/test_journal/*|originals*/*)
+                                   blocked="$blocked\n  $f  (journal folder)" ;;
+    # Model rationales can quote passages verbatim
+    cache/*|*with_rationales*)     blocked="$blocked\n  $f  (may quote passage text)" ;;
+    # The 09_ask.R scratchpad: whatever someone was probing, likely real text
+    ask.txt|ask_*.txt)             blocked="$blocked\n  $f  (09_ask.R scratchpad)" ;;
+    # Third-party copyright, not ours to redistribute: the source paper, and the
+    # Cultural Intelligence Scale item wording. setting/README.md is fine.
+    setting/*.pdf|setting/*.PDF)   blocked="$blocked\n  $f  (third-party copyright)" ;;
+    setting/ClassificationScheme.txt)
+                                   blocked="$blocked\n  $f  (copyrighted scale wording)" ;;
+    # Units files hold passages; only the template and fixture are safe
+    data/units_TEMPLATE.csv|data/units_synthetic.csv) ;;
+    data/units_*)                  blocked="$blocked\n  $f  (units file: contains passages)" ;;
+  esac
+done
+
+if [ -n "$blocked" ]; then
+  printf '\nCOMMIT BLOCKED -- these files look like student journal text:\n'
+  printf "$blocked\n"
+  cat <<'EOF'
+
+Journal passages are personal data under FADP/GDPR and must not be committed,
+including to a private remote. Only code, configuration and label-only results
+belong in this repository.
+
+  unstage:  git restore --staged <file>
+
+If this is a false positive (e.g. invented example text), override once with:
+  git commit --no-verify
+
+EOF
+  exit 1
+fi
+
+exit 0

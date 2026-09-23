@@ -1,0 +1,385 @@
+# ---------------------------------------------------------------------------
+# COIL intercultural competence coding scheme
+#
+# Source: rate_journals/ColorCode.docx, the rater alignment meeting of
+# 2026-07-28, and Jonas's scheme revisions of 2026-08-18. Single source of
+# truth for the label vocabularies used by BOTH the human-rating analysis and
+# the LLM prompts. Changing a definition here changes the prompts, so bump
+# `version` -- the value is recorded in every run manifest.
+# ---------------------------------------------------------------------------
+version: 5
+name: COIL intercultural competence coding scheme
+
+# v5 (2026-08-20), the rest of the meeting decisions:
+#   1. THE UNIT IS A SENTENCE. Complete journals come in, every sentence is one
+#      unit and carries exactly one class label. Splitting is mechanical and
+#      deterministic (split_sentences in R/units.R). The parent paragraph rides
+#      along as context, because many sentences cannot be judged alone.
+#   2. SINGLE LABEL. One of four per sentence. This reverts v3's multi-label,
+#      which existed only because paragraph units mixed several statements --
+#      a problem sentence units solve at the source.
+#   3. "No comment" is renamed "NOT MARKED", and it is the DEFAULT. Most
+#      sentences in a reflection journal are not about intercultural competence
+#      at all, and they stay unmarked. A sentence is marked only if it is about
+#      intercultural or cross-cultural experience, about the international
+#      collaboration itself, or about the student's own cultural disposition.
+#      Everything else -- course content, workload, logistics, plain narration --
+#      is Not marked, however positive or negative its tone. "Not marked" is
+#      also the answer when the coder cannot decide.
+#   4. Consequences to expect, so nobody misreads the output:
+#      - The class distribution is deliberately skewed towards Not marked. That
+#        depresses Krippendorff's alpha for arithmetic reasons (the kappa
+#        paradox), so read alpha next to Gwet's AC1 and next to the per-code
+#        figures, and report the DETECTION step (marked vs not marked) separately
+#        from the CHOICE step (which of the three, given marked). The human pilot
+#        already showed this pattern: detection alpha 0.271 against AC1 0.716.
+#      - Sentence units are NOT joinable with the paragraph-level 2026-07-28
+#        pilot. Either the humans re-code by sentence, or model sentences are
+#        aggregated up to their paragraph via `para_id`.
+#      - The main failure mode to watch for is over-marking: a model that finds
+#        something positive in every sentence. The scope gate below is written
+#        against exactly that, and scripts/04_smoke_test.R tests for it.
+#
+# v4 (2026-08-20), decided in the meeting with Serena and Thomas:
+#   1. The subclassification hangs off POSITIVE again, not Self awareness. This
+#      REVERTS the v3 change and restores the pilot protocol: ColorCode.docx
+#      heads the list "What kind of positive:", and in the 2026-07-28 alignment
+#      sheet the cqType columns are filled exactly on Positive rows. Because the
+#      trigger now matches the pilot's, human and model factor labels describe
+#      the same passages and CAN be compared -- scripts/03_compare.R drops its
+#      refusal-to-compare guard automatically.
+#   2. ITEM-LEVEL subclassification. The model no longer picks one of four
+#      factors; it picks one of the 20 questionnaire items of the Cultural
+#      Intelligence Scale (setting/ClassificationScheme.txt, Ang & Van Dyne),
+#      and the factor is DERIVED from the item by roll-up. So the scheme now has
+#      24 labels: 20 items nested in 4 factors.
+#      Consequences worth knowing before reading any number:
+#        - `cq_type` remains the 4-level factor, so every existing analysis and
+#          the comparison with the human pilot keep working unchanged.
+#        - `cq_item` is the new fine-grained column. With 20 categories over a
+#          few dozen passages most items are unused, so item-level reliability
+#          rests on very thin cells -- read its confidence interval, not its
+#          point estimate.
+#        - The course administered only 6 of the 20 items, so 14 item codes have
+#          no questionnaire data behind them. They are a coding vocabulary here,
+#          not measured constructs.
+#        - Several items describe situations this course cannot produce (COG4
+#          marriage systems, MOT5 shopping conditions, BEH5 facial expressions
+#          in a video call). Stage 2 is nonetheless a FORCED choice, matching the
+#          human protocol, which also allowed no "none" answer. See
+#          Questions2discuss.txt item 1.
+#
+# v3 (2026-08-18): MULTI-LABEL. A passage may carry more than one code. This
+#   replaced the forced single choice, which lost information on mixed
+#   paragraphs -- one 694-character passage held both a Positive and a Self
+#   awareness statement and the five models split 4:1 on which one to report,
+#   each correct about a different half. v3 also moved the subclassification to
+#   Self awareness; v4 moves it back (see above), so factor labels collected
+#   under v3 are NOT comparable with v4 ones.
+#
+# v2 (2026-08-18): sharpened Self awareness to a static-vs-adaptive distinction.
+#   v1 told the coder to prefer Self awareness for any self-referential passage,
+#   which structurally swallowed the Behavioural and Metacognitive factors --
+#   both are self-referential by definition. Caught by scripts/04_smoke_test.R.
+
+# --- The unit of analysis -------------------------------------------------
+unit:
+  level: sentence
+  # Sentences are produced by split_sentences() in R/units.R, not by a model, so
+  # the unit list is reproducible from this repository and reviewable before any
+  # rating happens.
+  note: >
+    One sentence, one label. The sentence's own paragraph is supplied as context
+    so that a sentence which is uninterpretable alone can still be judged, but
+    only the sentence itself is coded.
+
+# --- Single label per sentence --------------------------------------------
+multi_label:
+  enabled: false
+  max_codes: 1
+  exclusive: ["Not marked"]
+
+# --- Stage 1: the primary codes -------------------------------------------
+primary:
+  task: >
+    Decide which single code applies to the sentence. Most sentences in a
+    reflection journal are not about intercultural competence at all and are
+    therefore "Not marked". Mark a sentence only when it genuinely says
+    something about cultural or intercultural experience.
+  codes:
+    # "Not marked" is listed FIRST on purpose: it is the default, and putting it
+    # first in the prompt makes that visible rather than implied.
+    - label: Not marked
+      highlight: none
+      definition: >
+        The sentence is not about intercultural or cross-cultural experience.
+        This is the normal case and the default. Use it for course content,
+        lectures, exams, workload, deadlines, software and video links, plain
+        description of what happened, and anything else that does not speak to
+        cultural or intercultural matters - no matter how positive or negative
+        its tone. Also use it when the sentence might be about intercultural
+        experience but you cannot decide.
+    - label: Positive
+      highlight: yellow
+      definition: >
+        The sentence says something POSITIVE about intercultural or
+        cross-cultural experience - the international collaboration, working
+        with the partner group across cultures, learning about another culture,
+        or the student's own growing ability to operate across cultures. For
+        example, being glad to work with students from another country, valuing
+        what a culturally mixed team produced, or reporting having adapted
+        successfully to a partner's way of working.
+    - label: Negative
+      highlight: purple/pink
+      definition: >
+        The sentence says something NEGATIVE about intercultural or
+        cross-cultural experience. For example, that the international
+        collaboration did not work, that cultural or language differences got in
+        the way, or that working across the two groups was frustrating for
+        reasons to do with how they differ.
+    - label: Self awareness
+      highlight: red
+      definition: >
+        The sentence describes a STABLE feature of the student themselves -
+        their cultural background, nationality, upbringing, personality or
+        disposition - that they bring with them into intercultural work. For
+        example "I am Dutch and therefore I am direct", or "I am introverted, so
+        working in a mixed group is going to be hard for me". It is about who the
+        student says they are, not about something they did or changed during an
+        interaction.
+
+  decision_rules:
+    # The gate is rule one because it decides the great majority of sentences.
+    - START WITH THE SCOPE GATE, in two steps. Step one, ask whether the sentence
+      says anything about cultural or intercultural experience - another culture
+      or a cultural difference, the international collaboration itself, or the
+      student's own cultural background or disposition towards intercultural
+      work. If it does not, the answer is "Not marked" and you are finished.
+      Only if it does, go on to step two and choose between "Positive",
+      "Negative" and "Self awareness".
+    - EXPECT MOST SENTENCES TO BE "Not marked". A reflection journal is mostly
+      narration, course content and organisational detail. Marking a large share
+      of the sentences is a sign the gate is being applied too loosely.
+    - Sentiment is not scope. Enthusiasm about a lecture, irritation about a
+      deadline, praise for the teaching and complaints about the video link are
+      all "Not marked", however strongly expressed. Only mark a sentence whose
+      subject matter is cultural or intercultural.
+    - The collaboration in this course is international by construction, so an
+      evaluative statement about working with the partner group counts as
+      intercultural even when no nationality is named. But purely organisational
+      description of that work - who did which slides, when the group met - is
+      "Not marked" - it reports logistics, not intercultural experience.
+    # Two YAML traps in these rules: keep ": " out of an unquoted scalar (it
+    # parses as a mapping), and never START an item with a double quote (it
+    # parses as a quoted scalar and the rest of the sentence becomes an error).
+    - Code the sentence in front of you, not the paragraph around it. The
+      paragraph is given only so you can tell what the sentence refers to. A
+      sentence in an otherwise intercultural paragraph is still "Not marked" if
+      that sentence itself says nothing intercultural.
+    - Exactly one code. If a sentence carries both a positive and a negative
+      intercultural statement, choose the one it is mostly about.
+    - STATIC versus ADAPTIVE is the key distinction for "Self awareness". It is
+      for a stable trait or background the student brings with them ("I am Dutch
+      and therefore direct"). If the student instead describes adapting their
+      behaviour, or noticing and then revising their own assumptions during an
+      intercultural interaction, that is intercultural competence in action -
+      code "Positive" (or "Negative" if it went badly).
+    - Writing in the first person is NOT by itself a reason to choose "Self
+      awareness".
+    - Ask what the SUBJECT of the statement is. If the subject is another
+      culture, a group or the collaboration, it is not "Self awareness" even when
+      the student compares it to their own habits. Learning that another culture
+      does something differently from yours is cultural knowledge, so it is
+      "Positive" or "Negative" according to how the student frames it.
+      "Self awareness" requires the student themselves to be the subject, not
+      merely the point of comparison.
+    # Added after a model coded "I already know a few words of the partner
+    # group's language" as Self awareness. The SUBJECT rule above already implies
+    # otherwise, but implication was not enough, so here it is as a case.
+    - Knowing something ABOUT another culture is not "Self awareness", even
+      though the sentence begins with "I". Statements of the form "I know", "I
+      have learned" or "I found out" whose object is another culture, language or
+      way of working are cultural knowledge, and they are "Positive" when the
+      student frames them as something gained. Reserve "Self awareness" for
+      statements whose object is the student's own character or background.
+
+# --- Stage 2: the cultural-intelligence subclassification -----------------
+# 24 labels in two nested levels: 20 questionnaire items inside 4 factors. The
+# model chooses an ITEM; the factor is derived from the item's `factor` field, so
+# the two levels can never disagree with each other.
+subclassification:
+  # Which stage-1 codes trigger the subclassification. v4 restores the pilot's
+  # ["Positive"]; v3 had briefly moved it to ["Self awareness"]. Changing this
+  # line changes which passages carry a factor, so it also decides whether the
+  # human pilot labels are comparable -- see scripts/03_compare.R.
+  applies_to: ["Positive"]
+
+  # `item`   the model picks one of the 20 CQS items; factor derived by roll-up
+  # `factor` the model picks one of the 4 factors directly (the v3 behaviour)
+  level: item
+
+  task: >
+    The sentence has already been coded as a positive statement about
+    intercultural experience. Decide which single capability of cultural
+    intelligence it expresses, by naming the one questionnaire item of the
+    Cultural Intelligence Scale that the sentence most closely instantiates.
+
+  factors:
+    - label: Metacognitive
+      definition: >
+        The mental capability to acquire and understand cultural knowledge:
+        being conscious of one's cultural assumptions, checking them, and
+        adjusting them during an interaction.
+    - label: Cognitive
+      definition: >
+        Knowledge about cultures - their norms, practices, values, institutions
+        and conventions. Knowing something about a culture.
+    - label: Motivational
+      definition: >
+        Interest, drive and confidence in functioning effectively in
+        intercultural contexts. Enjoying intercultural interaction, or being
+        confident of coping with an unfamiliar culture.
+    - label: Behavioural
+      definition: >
+        The capability to flex one's own verbal and nonverbal behaviour in
+        intercultural interactions.
+
+  # --- The Cultural Intelligence Scale ------------------------------------
+  #
+  # ITEM WORDING IS DELIBERATELY ABSENT FROM THIS FILE. The CQS is copyrighted
+  # (Cultural Intelligence Center) and is not redistributed with this
+  # repository. What remains here is structural information about the
+  # instrument -- the item codes, which factor each belongs to, and whether this
+  # course administered it -- which the analysis needs and which is not the
+  # copyrighted expression.
+  #
+  # The wording is read at load time from the file named below, which is
+  # gitignored and blocked by the pre-commit hook. Obtain the scale and place it
+  # there; see setting/README.md for the expected format. A missing file is a
+  # hard error, not a fallback: coding against bare item codes would yield
+  # plausible-looking output from a model that had never seen the items.
+  #
+  # `course_item: true` marks the six items actually administered in this
+  # course -- the only ones with questionnaire data behind them.
+  items_text_file: setting/ClassificationScheme.txt
+  items:
+    - code: MC1
+      factor: Metacognitive
+      course_item: true
+    - code: MC2
+      factor: Metacognitive
+      course_item: true
+    - code: MC3
+      factor: Metacognitive
+    - code: MC4
+      factor: Metacognitive
+    - code: COG1
+      factor: Cognitive
+    - code: COG2
+      factor: Cognitive
+    - code: COG3
+      factor: Cognitive
+    - code: COG4
+      factor: Cognitive
+    - code: COG5
+      factor: Cognitive
+    - code: COG6
+      factor: Cognitive
+      course_item: true
+    - code: MOT1
+      factor: Motivational
+      course_item: true
+    - code: MOT2
+      factor: Motivational
+    - code: MOT3
+      factor: Motivational
+    - code: MOT4
+      factor: Motivational
+    - code: MOT5
+      factor: Motivational
+    - code: BEH1
+      factor: Behavioural
+      course_item: true
+    - code: BEH2
+      factor: Behavioural
+    - code: BEH3
+      factor: Behavioural
+    - code: BEH4
+      factor: Behavioural
+      course_item: true
+    - code: BEH5
+      factor: Behavioural
+
+  decision_rules:
+    - Work in two steps. First decide which of the four factors the sentence is
+      about, then choose the single best-matching item inside that factor. This
+      keeps the item and the factor consistent with each other.
+    - Match on substance, not on shared vocabulary. An item and a sentence that
+      happen to use the same word are not thereby a match.
+    - Knowing or having learned something about how another culture works -
+      its language, values, institutions or conventions - is Cognitive.
+    - Enjoying intercultural contact, looking forward to it, or being confident
+      of coping with an unfamiliar setting is Motivational.
+    - Being aware of one's own cultural assumptions, checking them, or revising
+      them during an interaction is Metacognitive.
+    - Changing how one speaks or behaves to suit an intercultural situation is
+      Behavioural.
+    # Two YAML traps in these rules: keep ": " out of an unquoted scalar (it
+    # parses as a mapping), and never START an item with a double quote (it
+    # parses as a quoted scalar and the rest of the sentence becomes an error).
+    - Exactly one item must be chosen, even when the fit is imperfect. Several
+      items describe circumstances this course cannot produce (marriage systems,
+      shopping abroad, living in another country). Do not stretch a sentence to
+      reach such an item - pick the closest item within the factor the sentence
+      is genuinely about, and let your confidence score carry the doubt.
+    - If a sentence would fit several items equally, choose the one whose wording
+      is most specific to what the sentence actually says.
+
+# Spelling variants accepted on input and folded onto the canonical labels.
+# Keys are matched case-insensitively (see canonical_label in R/codebook.R), so
+# write them in lower case.
+aliases:
+  self-awareness: Self awareness
+  selfawareness: Self awareness
+  cultural background: Self awareness
+  # "No comment" was this code's name up to v4; the pilot sheet still uses it.
+  no comment: Not marked
+  nocomment: Not marked
+  notmarked: Not marked
+  not-marked: Not marked
+  unmarked: Not marked
+  none: Not marked
+  no code: Not marked
+  behavioral: Behavioural
+  meta-cognitive: Metacognitive
+  metacog: Metacognitive
+  cog: Cognitive
+  motiv: Motivational
+  behav: Behavioural
+  # Item codes. The zero-padded forms are what the v1-v3 codebook used in its
+  # anchor strings, and models sometimes echo that style back.
+  mc01: MC1
+  mc02: MC2
+  mc03: MC3
+  mc04: MC4
+  metacog01: MC1
+  metacog02: MC2
+  cog01: COG1
+  cog02: COG2
+  cog03: COG3
+  cog04: COG4
+  cog05: COG5
+  cog06: COG6
+  mot01: MOT1
+  mot02: MOT2
+  mot03: MOT3
+  mot04: MOT4
+  mot05: MOT5
+  motiv01: MOT1
+  beh01: BEH1
+  beh02: BEH2
+  beh03: BEH3
+  beh04: BEH4
+  beh05: BEH5
+  behav01: BEH1
+  behav04: BEH4

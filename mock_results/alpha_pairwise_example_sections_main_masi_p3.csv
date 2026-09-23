@@ -1,0 +1,4 @@
+"rater_a","rater_b","n_joint","exact_set_agreement","alpha_nominal","alpha_headline"
+"DeepSeek-V4-Flash-DSpark","gpt-oss:20b",107,0.906542056074766,0.788543631490122,0.788543631490122
+"DeepSeek-V4-Flash-DSpark","qwen3.6:latest",106,0.905660377358491,0.786329113924051,0.786329113924051
+"gpt-oss:20b","qwen3.6:latest",106,0.89622641509434,0.77863614687649,0.77863614687649

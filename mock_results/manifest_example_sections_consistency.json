@@ -1,0 +1,48 @@
+{
+  "generated": "2026-08-25T20:06:57+0200",
+  "profile": "consistency",
+  "codebook_version": 5,
+  "multi_label": false,
+  "max_codes": 1,
+  "exclusive_codes": "Not marked",
+  "subclassification_applies_to": "Positive",
+  "subclassification_level": "item",
+  "subclassification_n_choices": 20,
+  "context_mode": "unit_context",
+  "units_file": "data/units_example_sections.csv",
+  "n_units": 107,
+  "temperature": 0.7,
+  "n_replicates": 3,
+  "rotate_labels": true,
+  "base_seed": 20260818,
+  "options": {
+    "num_ctx": 8192,
+    "top_p": 0.9
+  },
+  "providers": [
+    {
+      "name": "local_ollama",
+      "type": "ollama",
+      "base_url": "http://localhost:11434",
+      "structured_output": "schema",
+      "ollama_version": "0.32.14"
+    }
+  ],
+  "models": [
+    {
+      "id": "qwen3.6:latest",
+      "provider": "local_ollama",
+      "tier": "large",
+      "think": null
+    }
+  ],
+  "prompt_sha1": {
+    "primary": "fc3e6f637666bb6856d9931bb6f9966bdcb2696a",
+    "cq_type": "7be00db22127c8e3155d7821314fbf028f560d38",
+    "codebook": "a38307e1b67fff2723757fa3e88be0a8e95ffde2"
+  },
+  "n_calls_failed": 0,
+  "n_repaired": 0,
+  "r_version": "R version 4.4.1 (2024-06-14)",
+  "label": "example_sections"
+}

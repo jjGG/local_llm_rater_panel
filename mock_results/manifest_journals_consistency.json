@@ -1,0 +1,83 @@
+{
+  "generated": "2026-08-20T11:11:06+0200",
+  "profile": "consistency",
+  "codebook_version": 3,
+  "multi_label": true,
+  "max_codes": 3,
+  "exclusive_codes": "No comment",
+  "subclassification_applies_to": "Self awareness",
+  "context_mode": "unit",
+  "units_file": "data/units_journals.csv",
+  "n_units": 45,
+  "temperature": 0.7,
+  "n_replicates": 5,
+  "rotate_labels": true,
+  "base_seed": 20260818,
+  "options": {
+    "num_ctx": 8192,
+    "top_p": 0.9
+  },
+  "providers": [
+    {
+      "name": "local_ollama",
+      "type": "ollama",
+      "base_url": "http://localhost:11434",
+      "structured_output": "schema",
+      "ollama_version": "0.32.14"
+    },
+    {
+      "name": "fgcz_vllm",
+      "type": "openai",
+      "base_url": "http://<vllm-host>:8000/v1",
+      "structured_output": "prompt",
+      "ollama_version": null
+    }
+  ],
+  "models": [
+    {
+      "id": "llama3.1:latest",
+      "provider": "local_ollama",
+      "tier": "mid",
+      "think": null
+    },
+    {
+      "id": "gemma4:e4b",
+      "provider": "local_ollama",
+      "tier": "mid",
+      "think": null
+    },
+    {
+      "id": "qwen3:14b",
+      "provider": "local_ollama",
+      "tier": "mid",
+      "think": null
+    },
+    {
+      "id": "gpt-oss:20b",
+      "provider": "local_ollama",
+      "tier": "large",
+      "think": null
+    },
+    {
+      "id": "qwen3.6:latest",
+      "provider": "local_ollama",
+      "tier": "large",
+      "think": null
+    },
+    {
+      "id": "DeepSeek-V4-Flash-DSpark",
+      "provider": "fgcz_vllm",
+      "tier": "fgcz",
+      "think": null
+    }
+  ],
+  "prompt_sha1": {
+    "primary": "e04f9bce574bfa2f79ac84ff8ef7a9ea647378e0",
+    "cq_type": "a4714a4754a9cad85a367fcd54150eeec1539979",
+    "codebook": "38d49b790e979984c0e5df11e577cf64b1226ce8"
+  },
+  "n_calls_failed": 1,
+  "n_repaired": 0,
+  "r_version": "R version 4.4.1 (2024-06-14)",
+  "label": "journals"
+}

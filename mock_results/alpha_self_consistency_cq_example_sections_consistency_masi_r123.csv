@@ -1,0 +1,4 @@
+"model","n_replicates","n_units_pairable","prop_units_stable","krippendorff_alpha"
+"DeepSeek-V4-Flash-DSpark",3,19,0.842105263157895,0.86161449752883
+"gpt-oss:20b",3,21,0.666666666666667,0.676236044657097
+"qwen3.6:latest",3,23,0.91304347826087,0.91705069124424
